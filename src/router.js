@@ -5,6 +5,9 @@ import VueRouter from 'vue-router'
 import Root from './Root'
 import App from './pages/App'
 import NewDetail from './pages/NewDetail'
+import Themes from './pages/Themes'
+import ThemeDetail from './pages/ThemeDetail'
+import Description from './components/Description'
 
 Vue.use(VueRouter)
 
@@ -20,7 +23,20 @@ const routers = [
 	{
 		path:'/news-detail/:id',
 		name:'news-detail',
-		components:NewDetail
+		component:NewDetail
+	},
+	{
+		path:'/themes',
+		component:Themes
+	},
+	{
+		path:'/theme-detail/:id',
+		name:'theme-detail',
+		component:ThemeDetail
+	},
+	{
+		path:'/description',
+		component:Description
 	}
 ]
 

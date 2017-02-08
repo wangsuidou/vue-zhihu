@@ -6,7 +6,7 @@
 			<ZhihuHeadFix></ZhihuHeadFix>
 		</div>
 		<!-- ===show the loading page when load the news data=== -->
-		<!-- <LoadingTwo style='display:none'></LoadingTwo> -->
+		<LoadingTwo v-show="DONE_LOADING_TWO"></LoadingTwo>
 		<!-- ===the news list=== -->
 		<!-- 头条 -->
 		<TopNews :TopNewsData="DONE_NEWS_LATEST.top_stories"></TopNews>
@@ -38,7 +38,7 @@
 			TopNews
 		},
 		computed: {
-			...mapGetters(['DONE_NEWS_LATEST'])
+			...mapGetters(['DONE_NEWS_LATEST','DONE_LOADING_TWO'])
 		},
 		created: function() {
 			var _this = this;
