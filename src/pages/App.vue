@@ -25,7 +25,7 @@
 		<!-- ===the loading when news list loading=== -->
 		<LoadingOne v-show="DONE_LOADING_ONE"></LoadingOne>
 		<!-- ===back to top button=== -->
-		<button @click="BackToTop" v-show="BackToTopIsShow" class="back-to-top p1">
+		<button @click="backToTop" v-show="BackToTopIsShow" class="back-to-top p1">
 			<img src="../../static/top.png" alt="" style="width: 1rem; color: none; background-color: white;">
 		</button>
 	</div>
@@ -69,7 +69,7 @@
 			_this.$store.dispatch('FECTH_NEWS_LATEST')
 
 			// 监听页面已滑动的位置，当页面滑动了400px之后，显示“返回顶部”按钮，跟固定在顶部的导航栏
-			function BackToTop(){
+			function backToTop(){
 				setInterval(function(){
 					if(window.scrollY > 400){
 						_this.BackToTopIsShow = true
@@ -80,11 +80,15 @@
 					}
 				})	
 			}
-			BackToTop()
+			backToTop()
 		},
 		methods: {
 			loadMoreNews: function(){
 				this.$store.dispatch('FECTH_NEWS_LATEST_MORE')
+			},
+			backToTop: function(){
+				window.scrollTo(0,0)
+				this.ZhihuHeadFixClass= 'ZhihuHeadFixClass-none'
 			}
 		}
 
