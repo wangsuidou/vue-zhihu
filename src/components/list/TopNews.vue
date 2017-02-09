@@ -2,7 +2,7 @@
   <div class="top-news m2">
    <p class="top-news-title ml2 bold">今日要闻：</p>
    <div v-for="item in TopNewsData">
-   		<router-link :to="{name: 'news-detail',params:{id:item.id}}" style='color:black'>
+   		<router-link :to="{name: 'news-detail',params:{id:item.id}}" style='color:black'> 
    			<ZHihuListCover :title="item.title" :images="item.image"></ZHihuListCover>
    		</router-link>	
     </div>

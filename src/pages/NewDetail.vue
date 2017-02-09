@@ -1,18 +1,25 @@
 <template>
-	<div>这是详情页</div>
+	<div>
+		<LoadingTwo v-show='DONE_LOADING_TWO'></LoadingTwo>
+		<div v-html='DONE_NEWS_DETAIL.body'></div>
+	</div>
 </template>
 
 <script type="text/javascript">
+
 	import {mapGetters} from 'vuex'
+	import LoadingTwo from '../components/common/LoadingTwo'
+
 	export default {
 		name:'NewsDetail',
 		components:{
-
+			LoadingTwo
 		},
 		computed:{
-
+			...mapGetters(['DONE_NEWS_DETAIL','DONE_LOADING_TWO'])
 		},
 		created:function(){
+			this.$store.dispatch('FETCH_NEWS_DETAIL',this.$route.params.id)
 
 		},
 		mounted: function(){

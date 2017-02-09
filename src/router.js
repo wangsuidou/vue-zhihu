@@ -6,7 +6,7 @@ import Root from './Root'
 import App from './pages/App'
 import NewDetail from './pages/NewDetail'
 import Themes from './pages/Themes'
-import ThemeDetail from './pages/ThemeDetail'
+import ThemeList from './pages/ThemeList'
 import Description from './components/Description'
 
 Vue.use(VueRouter)
@@ -30,9 +30,9 @@ const routers = [
 		component:Themes
 	},
 	{
-		path:'/theme-detail/:id',
-		name:'theme-detail',
-		component:ThemeDetail
+		path:'/theme-list/:id',
+		name:'theme-list',
+		component:ThemeList
 	},
 	{
 		path:'/description',

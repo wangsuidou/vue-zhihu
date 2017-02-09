@@ -4,7 +4,7 @@
 			<LoadingTwo v-show='DONE_LOADING_TWO'></LoadingTwo>
 			<div class="themes m2">
 				<div v-for="item in DONE_THEMES.others">
-					<router-link :to="{name:'theme-detail',params:{id:item.id}}">
+					<router-link :to="{name:'theme-list',params:{id:item.id}}">
 						<div class="clearfix themes-list mt1">
 							<div class="col col-2 center">
 								<img :src="'http://lovestreet.leanapp.cn/zhihu/resource?url=' + item.thumbnail" width="40" style="border-radius:40px;" alt="图片">

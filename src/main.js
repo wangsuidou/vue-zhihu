@@ -4,6 +4,7 @@ import Vue from 'vue'
 import Root from './Root'
 import { router } from './router'
 import store from './vuex/store.js'
+import filter from './filter.js'
 
 /* eslint-disable no-new */
 new Vue({
