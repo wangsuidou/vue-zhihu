@@ -1,6 +1,7 @@
 
 
 //actions types
+export const POST_LOGIN_INFO = 'POST_LOGIN_INFO' //登录
 export const FECTH_NEWS_LATEST = 'FECTH_NEWS_LATEST'  // 日报要闻
 export const FETCH_NEWS_LIST_ROOT = 'FETCH_NEWS_LIST_ROOT' //日报列表
 export const FECTH_NEWS_LATEST_MORE = 'FECTH_NEWS_LATEST_MORE' //获取更多列表
@@ -9,6 +10,7 @@ export const FETCH_THEMES = 'FETCH_THEMES'  //专题类
 export const FETCH_THEMES_LIST = 'FETCH_THEMES_LIST' //专题列表
  
 //mutations types
+export const TOGGLE_LOGIN_INFO = 'TOGGLE_LOGIN_INFO'
 export const TOGGLE_NEWS_LATEST = 'TOGGLE_NEWS_LATEST'
 export const TOGGLE_NEWS_LIST_ROOT = 'TOGGLE_NEWS_LIST_ROOT'
 export const TOGGLE_NEWS_LATEST_MORE = 'TOGGLE_NEWS_LATEST_MORE' 
@@ -18,6 +20,7 @@ export const TOGGLE_THEMES_LIST = 'TOGGLE_THEMES_LIST'
 
  
 //getters types
+export const DONE_LOGIN_INFO = 'DONE_LOGIN_INFO'
 export const DONE_NEWS_LATEST = 'DONE_NEWS_LATEST' 
 export const DONE_NEWS_DETAIL = 'DONE_NEWS_DETAIL' 
 export const DONE_NEWS_LIST_ROOT = 'DONE_NEWS_LIST_ROOT'

@@ -13,19 +13,34 @@
 				<router-link class="h5" to="/description">关于</router-link>
 			</div>
 		</div>
+		<router-link class="h5" to="/login">
+			<div class="login m2" v-if='DONE_LOGIN_INFO == "登录"'>登录</div>
+			<div class="login m2" v-if='DONE_LOGIN_INFO != ""'>{{DONE_LOGIN_INFO.phone}}</div>
+
+		</router-link>
+		
 	</div>
 	
 </div>
 </template>
 
 <script>
+import {
+		mapGetters
+	}  from 'vuex'
+
 export default {
 	data: function() {
-		return {}
+		return {
+
+		}
 	},
 	name: 'ZhihuHead',
 	components: {
 
+	},
+	computed: {
+		...mapGetters(['DONE_LOGIN_INFO'])
 	},
 	methods: {
 
@@ -66,5 +81,12 @@ export default {
 		color: black;
 		transition: color 1s ease;
 	}
+}
+
+.login{
+	position: fixed;
+	top:0;
+	right: 0;
+	font-size: 0.875rem;
 }
 </style>

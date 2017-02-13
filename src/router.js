@@ -9,6 +9,10 @@ import Themes from './pages/Themes'
 import ThemeList from './pages/ThemeList'
 import Description from './components/Description'
 
+import Login from './pages/login'
+import Table from './pages/Table'
+
+
 Vue.use(VueRouter)
 
 const routers = [
@@ -19,6 +23,14 @@ const routers = [
 	{
 		path:'/app',
 		component:App
+	},
+	{
+		path:'/login',
+		component:Login
+	},
+	{
+		path:'/table',
+		component:Table
 	},
 	{
 		path:'/news-detail/:id',
@@ -39,6 +51,8 @@ const routers = [
 		component:Description
 	}
 ]
+
+
 
 export const router = new VueRouter({
 	routes:routers,

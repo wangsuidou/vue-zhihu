@@ -2,6 +2,9 @@ import * as types from '../zhihu-types.js'
 import axios from 'axios'
 var moment = require('moment')
 
+
+const accountUrl = '/account'
+
 const state = {
 	NewsLatest:{},
     NewsListRoot:[],
@@ -10,10 +13,15 @@ const state = {
     ThemeList:{}, 
     LoadingTwo:true,
     loadingOne:false,
-    Time:moment()
+    Time:moment(),
+    UserInfo:'登录'
 }
 
 const getters = {
+    //用户信息
+    [types.DONE_LOGIN_INFO]: state => {
+        return state.UserInfo
+    },
     //日报头条
 	[types.DONE_NEWS_LATEST]: state => {
         return state.NewsLatest
@@ -45,6 +53,10 @@ const getters = {
 }
 
 const mutations = {
+    //用户信息
+    [types.TOGGLE_LOGIN_INFO](state,all) {
+        state.UserInfo = all
+    },
     //日报列表
     [types.TOGGLE_NEWS_LATEST](state,all) {
         state.NewsLatest = all
@@ -78,6 +90,18 @@ const mutations = {
 }
 
 const actions = {
+    //登录
+    [types.POST_LOGIN_INFO]({commit},postData) {
+       state.UserInfo = '登录'
+       axios({
+          method: 'post',
+          url: accountUrl+'/user/login',
+          data: 'phone='+postData.phone+'&password='+postData.password,
+          headers:{'Content-Type':'application/x-www-form-urlencoded'}
+        }).then(res => {
+            commit(types.TOGGLE_LOGIN_INFO,res.data)
+        }).catch(err => console.log(err))
+    },
     //获取首页日报列表
     [types.FECTH_NEWS_LATEST]({commit}) {
         axios.get('http://lovestreet.leanapp.cn/zhihu/news/latest')
