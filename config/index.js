@@ -28,6 +28,13 @@ module.exports = {
             pathRewrite: {
                 '^/account':'/account'
             }
+        },
+        '/api/v1/shop':{
+            target: 'http://172.30.251.243:8089/',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/api/v1/shop':''
+            }
         }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
