@@ -2,11 +2,15 @@
 
 /**/
 export const FETCH_SHOP_LIST =  'FETCH_SHOP_LIST'
+export const FETCH_SHOP_DETAIL =  'FETCH_SHOP_DETAIL'
 
 
 /**/
 export const TOGGLE_SHOP_LIST =  'TOGGLE_SHOP_LIST'
+export const TOGGLE_SHOP_DETAIL =  'TOGGLE_SHOP_DETAIL'
 
 
 /**/
 export const DONE_SHOP_LIST =  'DONE_SHOP_LIST'
+export const DONE_SHOP_DETAIL =  'DONE_SHOP_DETAIL'
+

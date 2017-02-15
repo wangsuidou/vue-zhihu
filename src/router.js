@@ -17,6 +17,7 @@ import page_2 from './components/table/page_2'
 import page_3 from './components/table/page_3'
 import page_4 from './components/table/page_4'
 import page_5 from './components/table/page_5'
+import page_6 from './components/table/page_6'
 
 
 
@@ -61,6 +62,10 @@ const routers = [
 				path:'/page_5',
 				component:page_5
 			},
+			{
+				path:'/editTable/:id',
+				component:page_6
+			}
 		]
 	},
 	{
