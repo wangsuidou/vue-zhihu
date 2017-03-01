@@ -16,7 +16,6 @@
 		<router-link class="h5" to="/login">
 			<div class="login m2" v-if='DONE_LOGIN_INFO == "登录"'>登录</div>
 			<div class="login m2" v-if='DONE_LOGIN_INFO != ""'>{{DONE_LOGIN_INFO.phone}}</div>
-
 		</router-link>
 		
 	</div>
